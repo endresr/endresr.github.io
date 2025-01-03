@@ -35,8 +35,6 @@
         margin: 10px 0;
     }
     .content {
-        padding: 20px;
-        border: 2px solid #ddd;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     h2 {
@@ -79,6 +77,55 @@
     ul li {
         margin-bottom: 10px;
     }
+
+    .tabs {
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+    .tab {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+    }
+    .tab:not(.active) {
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+    .tab:not(.active):hover {
+        background-color: #eee;
+        border-bottom: 1px solid #ccc;
+    }
+    .tab.active {
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .tab.active.right {
+        border-right: none;
+    }
+    .tab.active.left {
+        border-left: none;
+    }
+    
+    .tab-content {
+        display: none;
+        padding: 20px;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    td {
+        font-size: small;
+    }
+    
 </style>
 </head>
 <body>
@@ -86,55 +133,257 @@
     <div class="container">
         <div class="header">
             <h1>Morn!</h1>
-            <p>- I'm Endre, nice to see you!</p>
+            <p>- I'm Endre, nice to meet you!</p>
         </div>
         
         <img src="./pictures/tavle.png" alt="Illustration of a blackboard with snippets from the current preprints." class="illustration">
 
         <div class="content">
-            <h2>About me</h2>
-            <p>I'm a PhD candidate in the algebra group at Department of Mathematical Sciences NTNU.</p>
-            <p><i class="fa fa-envelope"></i> <a href="mailto:endre.s.rundsveen@ntnu.no">endre.s.rundsveen@ntnu.no</a></p>
+            <div class="tabs">
+                <div class="tab active left" onclick="openTab(event, 'about')">About Me</div>
+                <div class="tab" onclick="openTab(event, 'preprints')">Preprints</div>
+                <div class="tab" onclick="openTab(event, 'teaching')">Teaching</div>
+                <div class="tab right" onclick="openTab(event, 'resources')">Resources</div>
+            </div>
 
-            <h2>Research interest</h2>
-            <ul>
-                <li>Representation theory of finite dimensional algebras</li>
-                <li>\(\tau\)-tilting theory</li>
-                <li>\(\tau_d\)-tilting theory</li>
-            </ul>
-            <h2>Preprints</h2>
-            <div class="preprint">
-                <span>Endre S. Rundsveen and Laertis Vaso.</span> <cite>\(\tau_d\)-tilting theory for Nakayama algebras</cite> (2024)
-                <div>
-                    <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
-                    <a href="https://arxiv.org/abs/2410.19505"><i class="fa fa-link"></i> URL</a>
+            <div id="about" class="tab-content active">
+                <p>
+                    I'm a PhD candidate in the algebra group at Department of Mathematical Sciences NTNU. 
+                    My research interests are within the area of representation theory of finite dimensional algebras, 
+                    with special focus on \(\tau\)-tilting theory and generalizations of it to higher homological algebra.
+                </p>
+                <p>
+                    Among the questions I am currently interested in are:
+                    <ul>
+                        <li>
+                            How \(\tau_d\)-tilting theory in \(d\)-cluster tilting subcategories 
+                    relates to the tilting theory in extended module categories, in the sense of Yu Zhou (arxiv:2411.15473). 
+                        </li>
+                        <li>
+                            How to properly define the notion of mutation in \(\tau_d\)-tilting theory.
+                        </li>
+                        <li>
+                            Can we easily describe the extended module category explicitly for any given Nakayama algebra?
+                        </li>
+                    </ul>
+                </p>
+
+                <h2>Contact information</h2>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:endre.s.rundsveen@ntnu.no">endre.s.rundsveen@ntnu.no</a></p>
+            </div>
+
+            <div id="preprints" class="tab-content">
+                <div class="preprint">
+                    <span>Endre S. Rundsveen and Laertis Vaso.</span> <cite>\(\tau_d\)-tilting theory for Nakayama algebras</cite> (Arxiv, 2024)
+                    <div>
+                        <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                        <a href="https://arxiv.org/abs/2410.19505"><i class="fa fa-link"></i> URL</a>
+                    </div>
+                </div>
+
+                <div class="preprint">
+                    <span>Endre S. Rundsveen.</span> <cite>Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</cite> (Arxiv, 2024)
+                    <div>
+                        <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                        <a href="https://arxiv.org/abs/2410.02322"><i class="fa fa-link"></i> URL</a>
+                    </div>
+                </div>
+
+                <div class="preprint">
+                    <span>Erlend D. Børve, Jacob Fjeld Grevstad, Endre S. Rundsveen.</span> <cite>\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</cite> (Arxiv, 2024)
+                    <div>
+                        <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                        <a href="https://arxiv.org/abs/2407.17965"><i class="fa fa-link"></i> URL</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="preprint">
-                <span>Endre S. Rundsveen.</span> <cite>Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</cite> (2024)
-                <div>
-                    <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
-                    <a href="https://arxiv.org/abs/2410.02322"><i class="fa fa-link"></i> URL</a>
-                </div>
+            <div id="teaching" class="tab-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Where
+                            </th>
+                            <th>
+                                When
+                            </th>
+                            <th>
+                                Role
+                            </th>
+                            <th>
+                                What
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Summer 2024
+                            </td>
+                            <td>
+                                Lecturer
+                            </td>
+                            <td>
+                                Refresher course in Linear Algebra and Differential Equations
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Fall 2023
+                            </td>
+                            <td>
+                                Teaching assistant
+                            </td>
+                            <td>
+                                MA1101 - Calculus 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Summer 2023
+                            </td>
+                            <td>
+                                Lecturer
+                            </td>
+                            <td>
+                                Refresher course in Linear Algebra and Differential Equations
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Fall 2022
+                            </td>
+                            <td>
+                                Lecturer
+                            </td>
+                            <td>
+                                TMA4110 - Mathematics 3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Summer 2022
+                            </td>
+                            <td>
+                                Lecturer
+                            </td>
+                            <td>
+                                Refresher course in Linear Algebra and Differential Equations
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Spring 2022
+                            </td>
+                            <td>
+                                Teaching assistant
+                            </td>
+                            <td>
+                                TMA4115 - Mathematics 3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Fall 2021
+                            </td>
+                            <td>
+                                Teaching assistant
+                            </td>
+                            <td>
+                                TMA4110 - Mathematics 3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Fall 2020
+                            </td>
+                            <td>
+                                Learning assistant
+                            </td>
+                            <td>
+                                MA1201 - Linear algebra and Geometry
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Spring 2019
+                            </td>
+                            <td>
+                                Learning assistant
+                            </td>
+                            <td>
+                                MA2401/MA6401 - Geometry
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NTNU
+                            </td>
+                            <td>
+                                Fall 2017
+                            </td>
+                            <td>
+                                Learning assistant
+                            </td>
+                            <td>
+                                MA1201 - Linear algebra and Geometry
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
             </div>
 
-            <div class="preprint">
-                <span>Erlend D. Børve, Jacob Fjeld Grevstad, Endre S. Rundsveen.</span> <cite>\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</cite> (2024)
-                <div>
-                    <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
-                    <a href="https://arxiv.org/abs/2407.17965"><i class="fa fa-link"></i> URL</a>
-                </div>
+            <div id="resources" class="tab-content">
+                <ul>
+                    <li>
+                        Supplemental website illustrating the paper <cite>\(\tau_d\)-tilting theory for Nakayama algebras</cite> can be found <a href="./Higher_Tau_Nakayama/">here</a>.
+                    </li>
+                </ul>
             </div>
-
-            <h2>Links and resources</h2>
-            <ul>
-                <li>
-                    Supplemental website illustrating the paper <cite>\(\tau_d\)-tilting theory for Nakayama algebras</cite> can be found <a href="./Higher_Tau_Nakayama/">here</a>.
-                </li>
-            </ul>
         </div>
     </div>
 
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
