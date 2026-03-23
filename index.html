@@ -2,229 +2,193 @@
 <html>
 <head>
 <title>Endre Rundsveen</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="./css/stylesheet.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="./css/academicons.min.css"/>
 
-<style type="text/css">
-    body {
-        background-color:  #f7f7f7;
-        line-height: 1.6;
-        font-size: 18px;
-        color: #565454;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        width: 750px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    .header {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-    .header h1 {
-        font-size: 80px;
-        margin: 0;
-    }
-    .header p {
-        font-size: 30px;
-        margin: 10px 0;
-    }
-    .content {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-        line-height: 1.2;
-    }
-    a {
-        font-weight:500;
-        color: black;
-        text-decoration:dotted underline;
-    }
-    a:hover {
-        color: #565656;
-    }
-    a:visited {
-        color: #565656;
-    }
-    .preprint {
-        margin-bottom: 1rem;
-    }
-    .preprint span {
-        display: block;
-        font-weight: bold;
-    }
-    .preprint cite {
-        font-style: italic;
-    }
-    .preprint a {
-        margin-right: 10px;
-    }
-    .illustration {
-        width: 80%;
-        margin: 0 auto 50px auto;
-        display: block;
-        
-    }
-    ul {
-        list-style-type: circle;
-        padding-left: 20px;
-    }
-    ul li {
-        margin-bottom: 10px;
-    }
 
-    .tabs {
-        display: flex;
-        cursor: pointer;
-        margin-bottom: 20px;
-    }
-    .tab {
-        flex: 1;
-        padding: 10px;
-        text-align: center;
-    }
-    .tab:not(.active) {
-        background-color: #ddd;
-        border-bottom: 1px solid #ccc;
-    }
-    .tab:not(.active):hover {
-        background-color: #eee;
-        border-bottom: 1px solid #ccc;
-    }
-    .tab.active {
-        border-right: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-    }
-    .tab.active.right {
-        border-right: none;
-    }
-    .tab.active.left {
-        border-left: none;
-    }
-    
-    .tab-content {
-        display: none;
-        padding: 20px;
-    }
-    .tab-content.active {
-        display: block;
-    }
-    table {
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    td {
-        font-size: small;
-    }
 
-    .teaching-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin: 20px 0;
-    }
-    .teaching-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        display: block; /* Default to hidden; shown dynamically by filter */
-    }
-    .teaching-card h3 {
-        margin: 0 0 10px;
-        font-size: 18px;
-        color: #333;
-    }
-    .teaching-card p {
-        margin: 5px 0;
-        font-size: 16px;
-        color: #565454;
-    }
-    .teaching-card span {
-        font-weight: bold;
-        color: #333;
-    }
-
-    .filter-container {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .filter-button {
-        padding: 10px 15px;
-        margin: 5px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: #f4f1ea;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    .filter-button.active {
-        background-color: #ddd;
-        font-weight: bold;
-    }
-    .filter-button:hover {
-        background-color: #e0e0e0;
-    }
-
-    .preprints-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin: 20px 0;
-    }
-    .preprint-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
-    .preprint-card h3 {
-        margin: 0 0 10px;
-        font-size: 18px;
-        color: #333;
-    }
-    .preprint-card p {
-        margin: 5px 0;
-        font-size: 16px;
-        color: #565454;
-    }
-    .preprint-card .links a {
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .preprint-card a:hover {
-        text-decoration: underline;
-    }
-    .preprint-card .links {
-        margin-top: 10px;
-    }
-    .preprint-card .links a {
-        margin-right: 10px;
-    }
-</style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header">
-            <h1>Morn!</h1>
-            <p>- I'm Endre, nice to meet you!</p>
+        <div class="panel left">
+            <div class="greeting">
+                <img src="./pictures/portrett_kvadrat.jpg" id="portrett">
+                <h1 class="hilsen">Morn!</h1>
+                <p class="hilsen">- Endre her, hyggelig å møte deg!</p>
+            
+            <nav>
+                <ul>
+                    <li class="tab active" onclick="openTab(event, 'about')">
+                        <i class="fa fa-user"></i>    Om meg
+                    </li>
+                    <li class="tab" onclick="openTab(event, 'papers')">
+                        <i class="fa fa-file"></i>    Artikler
+                    </li>
+                    <li class="tab" onclick="openTab(event, 'teaching')">
+                        <i class="fa-solid fa-school"></i>   Undervisning
+                    </li>
+                </ul>
+            </nav>
+            </div>
         </div>
-        
-        <img src="./pictures/tavle.png" alt="Illustration of a blackboard with snippets from the current preprints." class="illustration">
+        <div class="panel right">
+            <div id="about" class="tab-content active">
+                <div>
+                    <h1> Om meg</h1>
+                <p>
+                    Jeg er en matematiker innen algebra som har forsket på representasjonsteori av endelig-dimensjonale algebraer. Mer spesifikt har jeg sett på \(\tau\)-vipping og generaliseringer av det. Sjekk ut doktorgradsavhandlingen min og de lenkede artiklene for mer detaljer.
+                </p>
+                <ul>
+                    <li>
+                        <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/endrerundsveen">endrerundsveen</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-github"></i> <a href="https://github.com/endresr">endresr</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <div id="papers" class="tab-content">
+                <h1>Artikler</h1>
+                <div class="papers-container">
+                    <h2>Publisert</h2><br>
+                    <div class="paper-card">
+                        <h3>Doktorgradsavhandling</h3>
+                        <p><strong>Tittel:</strong> Generalizations of \(\tau\)-tilting: Related structures and higher settings</p>
+                        <p><strong>År:</strong> 2026</p>
+                        <div class="links">
+                            <a href="https://hdl.handle.net/11250/5366326"><i class="fa fa-paperclip"></i> Digital kopi</a>
+                            <a href="./resources/misc/defence.pdf"><i class="fa fa-chalkboard"></i> Forsvar</a>
+                            <a href="./resources/misc/trialLecture.pdf"><i class="fa fa-chalkboard"></i> Prøveforelesning</a>
+                        </div>
+                    </div>
+                    <div class="paper-card">
+                        <h3>\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</h3>
+                        <p><strong>Authors:</strong> <a href="https://bervinator.github.io/">Erlend D. Børve</a> <a href="https://orcid.org/0009-0007-6905-0208"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, <a href="https://jagr2808.github.io/">Jacob Fjeld Grevstad</a> <a href="https://orcid.org/0009-0009-7767-6133"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
+                        <p><strong>Journal:</strong> Journal of Algebra</p>
+                        <p><strong>Year:</strong> 2025</p>
+                        <div class="links">
+                            <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                            <a href="https://doi.org/10.1016/j.jalgebra.2025.06.048" target="_blank"><i class="ai ai-doi ai-lg" style="color:#fab608;"></i> DOI</a>
+                            <a href="https://arxiv.org/abs/2407.17965" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="papers-container" >
+                    <h2>Forhåndstrykk</h2><br>
+                    <div class="paper-card">
+                        <h3>A note on the  \(m\)-extended module categories of Nakayama algebras</h3>
+                        <p><strong>Authors:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
+                        <p><strong>Year:</strong> 2025</p>
+                        <div class="links">
+                            <a href="./resources/bib-files/extendedModuleNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                            <a href="https://arxiv.org/abs/2601.14843" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a> <br>
+                        </div>
+                    </div>
+                    <div class="paper-card">
+                        <h3>\(\tau_d\)-tilting theory for Nakayama algebras</h3>
+                        <p><strong>Authors:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, <a href="https://laertisvaso.com/">Laertis Vaso</a> <a href="https://orcid.org/0000-0003-0313-7777"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
+                        <p><strong>Year:</strong> 2024</p>
+                        <div class="links">
+                            <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                            <a href="https://arxiv.org/abs/2410.19505" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a> <br>
+                            <a href="./Higher_Tau_Nakayama/"><i class="fa fa-paperclip"></i> Additional resources</a>
+                        </div>
+                    </div>
+                    <div class="paper-card">
+                        <h3>Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</h3>
+                        <p><strong>Author:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
+                        <p><strong>Year:</strong> 2024</p>
+                        <div class="links">
+                            <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> Cite</a>
+                            <a href="https://arxiv.org/abs/2410.02322" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="teaching" class="tab-content">
+                <h1>Undervisningserfaring</h1>
+                <div class="filter-container">
+                    <button class="filter-button active" onclick="filterCards('all')">All</button>
+                    <button class="filter-button" onclick="filterCards('Lecturer')">Lecturer</button>
+                    <button class="filter-button" onclick="filterCards('Teaching Assistant')">Teaching Assistant</button>
+                    <button class="filter-button" onclick="filterCards('Learning Assistant')">Learning Assistant</button>
+                </div>
+                <div class="teaching-cards">
+                    <div class="teaching-card" data-role="Lecturer">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Summer 2024</p>
+                        <p><span>Role:</span> Lecturer</p>
+                        <p><span>What:</span> Refresher course in Linear Algebra and Differential Equations</p>
+                        <div>
+                            <a href="https://wiki.math.ntnu.no/tma4110/2024h/forkurs/start" target="_blank"><i class="fa fa-link"></i>Website of the course.</a>
+                        </div>
+                    </div>
+                    <div class="teaching-card" data-role="Teaching Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Fall 2023</p>
+                        <p><span>Role:</span> Teaching Assistant</p>
+                        <p><span>What:</span> MA1101 - Calculus 1</p>
+                    </div>
+                    <div class="teaching-card" data-role="Lecturer">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Summer 2023</p>
+                        <p><span>Role:</span> Lecturer</p>
+                        <p><span>What:</span> Refresher course in Linear Algebra and Differential Equations</p>
+                    </div>
+                    <div class="teaching-card" data-role="Lecturer">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Fall 2022</p>
+                        <p><span>Role:</span> Lecturer</p>
+                        <p><span>What:</span> TMA4110 - Mathematics 3</p>
+                    </div>
+                    <div class="teaching-card" data-role="Lecturer">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Summer 2022</p>
+                        <p><span>Role:</span> Lecturer</p>
+                        <p><span>What:</span> Refresher course in Linear Algebra and Differential Equations</p>
+                    </div>
+                    <div class="teaching-card" data-role="Teaching Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Spring 2022</p>
+                        <p><span>Role:</span> Teaching Assistant</p>
+                        <p><span>What:</span> TMA4115 - Mathematics 3</p>
+                    </div>
+                    <div class="teaching-card" data-role="Teaching Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Fall 2021</p>
+                        <p><span>Role:</span> Teaching Assistant</p>
+                        <p><span>What:</span> TMA4115 - Mathematics 3</p>
+                    </div>
+                    <div class="teaching-card" data-role="Learning Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Fall 2020</p>
+                        <p><span>Role:</span> Learning Assistant (Student job)</p>
+                        <p><span>What:</span> MA1201 - Linear Algebra and Geometry</p>
+                    </div>
+                    <div class="teaching-card" data-role="Learning Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Spring 2019</p>
+                        <p><span>Role:</span> Learning Assistant (Student job)</p>
+                        <p><span>What:</span> MA2401/MA6401 - Geometry</p>
+                    </div>
+                    <div class="teaching-card" data-role="Learning Assistant">
+                        <h3>NTNU</h3>
+                        <p><span>When:</span> Fall 2017</p>
+                        <p><span>Role:</span> Learning Assistant (Student job)</p>
+                        <p><span>What:</span> MA1201 - Linear Algebra and Geometry</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+        <!--<img src="./pictures/tavle.png" alt="Illustration of a blackboard with snippets from the current preprints." class="illustration">
 
         <div class="content">
             <div class="tabs">
@@ -396,7 +360,7 @@
             </div>
         </div>
     </div>
-
+-->
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
@@ -429,5 +393,6 @@
             });
         }
     </script>
+
 </body>
 </html>
