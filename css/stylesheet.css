@@ -75,7 +75,7 @@ p.hilsen{
     .panel {
         min-height: auto;
     }
-    #about {
+    #about.active {
         height: auto;
         display: block;
     }
