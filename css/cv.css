@@ -1,0 +1,18 @@
+.timeline-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px; /* Adjust based on number of lanes */
+  background: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.timeline-bar {
+  position: absolute;
+  height: 40px; /* Fixed height for each experience */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  transition: top 0.3s ease; /* Smooth transition if you filter items */
+  cursor: pointer;
+}
