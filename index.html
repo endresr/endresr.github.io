@@ -1,226 +1,477 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Endre Rundsveen</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="./css/stylesheet.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="./css/academicons.min.css"/>
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Endre Rundsveen — mathematician, builder, and problem-solver. PhD in Mathematics, NTNU 2026. Open to data, tech and consulting roles in Norway.">
+  <title>Endre Rundsveen</title>
+  <link rel="stylesheet" href="./css/stylesheet.css"/>
+  <link rel="stylesheet" href="./css/academicons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-    <div class="container">
-        <div class="panel left">
-            <div class="greeting">
-                <img src="./pictures/portrett_kvadrat.jpg" id="portrett">
-                <h1 class="hilsen">Morn!</h1>
-                <p class="hilsen">- Endre her, hyggelig å møte deg!</p>
-            
-            <nav>
-                <ul>
-                    <li class="tab active" onclick="openTab(event, 'about')">
-                        <i class="fa fa-user"></i>    Om meg
-                    </li>
-                    <li class="tab" onclick="openTab(event, 'papers')">
-                        <i class="fa fa-file"></i>    Artikler
-                    </li>
-                    <li class="tab" onclick="openTab(event, 'teaching')">
-                        <i class="fa-solid fa-school"></i>   Undervisning
-                    </li>
-                </ul>
-            </nav>
-            </div>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+    <i class="fa fa-bars"></i>
+  </button>
+  <a href="#home" class="nav-brand">Endre Rundsveen</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" data-en="About" data-no="Om meg">About</a></li>
+    <li><a href="#projects" data-en="Projects" data-no="Prosjekter">Projects</a></li>
+    <li><a href="#research" data-en="Research" data-no="Forskning">Research</a></li>
+    <li><a href="#teaching" data-en="Teaching" data-no="Undervisning">Teaching</a></li>
+    <li><a href="#contact" data-en="Contact" data-no="Kontakt">Contact</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" onclick="setLang('no')">NO</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-aside">
+      <img src="./pictures/portrett_kvadrat.jpg" alt="Endre Rundsveen" class="hero-portrait">
+      <div class="hero-info-grid">
+        <div class="info-row">
+          <span class="info-label" data-en="Based in" data-no="Lokasjon">Based in</span>
+          <span class="info-value" data-en="Oslo, Norway" data-no="Oslo, Norge">Oslo, Norway</span>
         </div>
-        <div class="panel right">
-            <div id="about" class="tab-content active">
-                <div>
-                    <h1> Om meg</h1>
-                <p>
-                    Jeg er en matematiker innen algebra som har forsket på representasjonsteori av endelig-dimensjonale algebraer. Mer spesifikt har jeg sett på \(\tau\)-vipping og generaliseringer av det. Sjekk ut doktorgradsavhandlingen min og de lenkede artiklene for mer detaljer.
-                </p>
-                <ul>
-                    <li>
-                        <i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/endrerundsveen">endrerundsveen</a>
-                    </li>
-                    <li>
-                        <i class="fa-brands fa-github"></i> <a href="https://github.com/endresr">endresr</a>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            <div id="papers" class="tab-content">
-                <h1>Artikler</h1>
-                <div class="papers-container">
-                    <h2>Publisert</h2><br>
-                    <div class="paper-card">
-                        <h3>Doktorgradsavhandling</h3>
-                        <p><strong>Tittel:</strong> Generalizations of \(\tau\)-tilting: Related structures and higher settings</p>
-                        <p><strong>År:</strong> 2026</p>
-                        <div class="links">
-                            <a href="https://hdl.handle.net/11250/5366326"><i class="fa fa-paperclip"></i> Digital kopi</a>
-                            <a href="./resources/misc/defence.pdf"><i class="fa fa-chalkboard"></i> Forsvar</a>
-                            <a href="./resources/misc/trialLecture.pdf"><i class="fa fa-chalkboard"></i> Prøveforelesning</a>
-                        </div>
-                    </div>
-                    <div class="paper-card">
-                        <h3>\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</h3>
-                        <p><strong>Forfattere:</strong> <a href="https://bervinator.github.io/">Erlend D. Børve</a> <a href="https://orcid.org/0009-0007-6905-0208"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, <a href="https://jagr2808.github.io/">Jacob Fjeld Grevstad</a> <a href="https://orcid.org/0009-0009-7767-6133"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
-                        <p><strong>Journal:</strong> Journal of Algebra</p>
-                        <p><strong>År:</strong> 2025</p>
-                        <div class="links">
-                            <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> Siter</a>
-                            <a href="https://doi.org/10.1016/j.jalgebra.2025.06.048" target="_blank"><i class="ai ai-doi ai-lg" style="color:#fab608;"></i> DOI</a>
-                            <a href="https://arxiv.org/abs/2407.17965" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="papers-container" >
-                    <h2>Forhåndstrykk</h2><br>
-                    <div class="paper-card">
-                        <h3>A note on the  \(m\)-extended module categories of Nakayama algebras</h3>
-                        <p><strong>Forfatter:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
-                        <p><strong>År:</strong> 2025</p>
-                        <div class="links">
-                            <a href="./resources/bib-files/extendedModuleNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Siter</a>
-                            <a href="https://arxiv.org/abs/2601.14843" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a> <br>
-                        </div>
-                    </div>
-                    <div class="paper-card">
-                        <h3>\(\tau_d\)-tilting theory for Nakayama algebras</h3>
-                        <p><strong>Forfattere:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a>, <a href="https://laertisvaso.com/">Laertis Vaso</a> <a href="https://orcid.org/0000-0003-0313-7777"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
-                        <p><strong>År:</strong> 2024</p>
-                        <div class="links">
-                            <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> Siter</a>
-                            <a href="https://arxiv.org/abs/2410.19505" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a> <br>
-                            <a href="./Higher_Tau_Nakayama/"><i class="fa fa-paperclip"></i> Ekstra ressurser</a>
-                        </div>
-                    </div>
-                    <div class="paper-card">
-                        <h3>Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</h3>
-                        <p><strong>Forfatter:</strong> Endre S. Rundsveen <a href="https://orcid.org/0009-0000-0589-8399"><i class="ai ai-orcid" style="color: #A6CE39;"></i></a></p>
-                        <p><strong>År:</strong> 2024</p>
-                        <div class="links">
-                            <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> Siter</a>
-                            <a href="https://arxiv.org/abs/2410.02322" target="_blank"><i class="ai ai-arxiv ai-lg" style="color:#b31b1b;"></i> arXiv</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="teaching" class="tab-content">
-                <h1>Undervisningserfaring</h1>
-                <div class="filter-container">
-                    <button class="filter-button active" onclick="filterCards('all')">Alle</button>
-                    <button class="filter-button" onclick="filterCards('Lecturer')">Foreleser</button>
-                    <button class="filter-button" onclick="filterCards('Teaching Assistant')">Øvingslærer</button>
-                    <button class="filter-button" onclick="filterCards('Learning Assistant')">Studentassistent</button>
-                </div>
-                <div class="teaching-cards">
-                    <div class="teaching-card" data-role="Lecturer">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Sommer 2024</p>
-                        <p><span>Rolle:</span> Foreleser</p>
-                        <p><span>Hva:</span> Oppfriskelseskurs i lineær algebra og differensiallikninger</p>
-                        <div>
-                            <a href="https://wiki.math.ntnu.no/tma4110/2024h/forkurs/start" target="_blank"><i class="fa fa-link"></i>Nettside til kurset.</a>
-                        </div>
-                    </div>
-                    <div class="teaching-card" data-role="Teaching Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Høst 2023</p>
-                        <p><span>Rolle:</span> Øvingslærer</p>
-                        <p><span>Hva:</span> MA1101 - Grunnkurs i Analyse 1</p>
-                    </div>
-                    <div class="teaching-card" data-role="Lecturer">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Sommer 2023</p>
-                        <p><span>Rolle:</span> Foreleser</p>
-                        <p><span>Hva:</span> Oppfriskelseskurs i lineær algebra og differensiallikninger</p>
-                    </div>
-                    <div class="teaching-card" data-role="Lecturer">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Høst 2022</p>
-                        <p><span>Rolle:</span> Foreleser</p>
-                        <p><span>Hva:</span> TMA4110 - Matematikk 3</p>
-                    </div>
-                    <div class="teaching-card" data-role="Lecturer">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Sommer 2022</p>
-                        <p><span>Rolle:</span> Foreleser</p>
-                        <p><span>Hva:</span> Oppfriskelseskurs i lineær algebra og differensiallikninger</p>
-                    </div>
-                    <div class="teaching-card" data-role="Teaching Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Vår 2022</p>
-                        <p><span>Rolle:</span> Øvingslærer</p>
-                        <p><span>Hva:</span> TMA4115 - Matematikk 3</p>
-                    </div>
-                    <div class="teaching-card" data-role="Teaching Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Høst 2021</p>
-                        <p><span>Rolle:</span> Øvingslærer</p>
-                        <p><span>Hva:</span> TMA4115 - Matematikk 3</p>
-                    </div>
-                    <div class="teaching-card" data-role="Learning Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Høst 2020</p>
-                        <p><span>Rolle:</span> Studentassistent</p>
-                        <p><span>Hva:</span> MA1201 - Lineær algebra og geometri</p>
-                    </div>
-                    <div class="teaching-card" data-role="Learning Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Når:</span> Vår 2019</p>
-                        <p><span>Rolle:</span> Studentassistent</p>
-                        <p><span>Hva:</span> MA2401/MA6401 - Geometri</p>
-                    </div>
-                    <div class="teaching-card" data-role="Learning Assistant">
-                        <h3>NTNU</h3>
-                        <p><span>Hva:</span> Høst 2017</p>
-                        <p><span>Rolle:</span> Studentassistent</p>
-                        <p><span>Hva:</span> MA1201 - Lineær algebra and geometri</p>
-                    </div>
-            </div>
+        <div class="info-row">
+          <span class="info-label" data-en="Available" data-no="Tilgjengelig">Available</span>
+          <span class="info-value" data-en="Open to opportunities" data-no="Åpen for muligheter">Open to opportunities</span>
         </div>
+        <div class="info-row">
+          <span class="info-label" data-en="Background" data-no="Bakgrunn">Background</span>
+          <span class="info-value" data-en="Algebra, Representation theory" data-no="Algebra, Representasjonsteori">Algebra, Representation theory</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label" data-en="Looking for" data-no="Søker">Looking for</span>
+          <span class="info-value" data-en="Data · Tech · Consulting" data-no="Data · Tech · Konsulent">Data · Tech · Consulting</span>
+        </div>
+      </div>
     </div>
-       
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            tablinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).className += " active";
-            evt.currentTarget.className += " active";
-        }
+    <div class="hero-text">
+      <p class="hero-eyebrow">MATHEMATICIAN · BUILDER</p>
+      <h1 class="hero-name">Endre<br>Rundsveen</h1>
+      <div data-lang="en">
+        <p class="hero-tagline">I find <strong>structure in complexity</strong> — whether that's understanding algebraic objects, building computational tools, or making abstract ideas clear to a room full of students.</p>
+        <p class="hero-sub">PhD in Mathematics (NTNU, 2026). Now looking for problems worth solving in industry.</p>
+      </div>
+      <div data-lang="no">
+        <p class="hero-tagline">Jeg finner <strong>struktur i kompleksitet</strong> — enten det gjelder å forstå algebraiske objekter, bygge beregningsverktøy, eller gjøre abstrakte ideer tydelige for et rom fullt av studenter.</p>
+        <p class="hero-sub">PhD i matematikk (NTNU, 2026). Søker nå problemer verdt å løse i industrien.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary" data-en="See My Work" data-no="Se hva jeg har bygd">See My Work</a>
+        <a href="#contact" class="btn btn-secondary" data-en="Get in Touch" data-no="Ta kontakt">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function filterCards(role) {
-            // Get all teaching cards and filter buttons
-            const cards = document.querySelectorAll('.teaching-card');
-            const buttons = document.querySelectorAll('.filter-button');
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <span class="section-label reveal" data-en="ABOUT ME" data-no="OM MEG">ABOUT ME</span>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <h2 class="about-heading">
+          <span data-lang="en">A mathematician<br><em>in transition</em></span>
+          <span data-lang="no">En matematiker<br><em>i omstilling</em></span>
+        </h2>
+        <div data-lang="en">
+          <p>I recently completed my PhD at NTNU, where I spent years studying and classifying algebraic structures. In essence, finding hidden order in complicated systems.</p>
+          <p>I like finding structures and patterns, building tools to make them visible, and explaining what they mean. I've done this in pure mathematics; I want to do it with real data and real problems.</p>
+          <p>Outside the theory, I've built interactive web tools and computational pipelines, taught university mathematics for seven years, and written four papers, two sole-authored.</p>
+        </div>
+        <div data-lang="no">
+          <p>Jeg fullførte nylig doktorgraden min ved NTNU, der jeg fordypet meg i å forstå og klassifisere algebraiske strukturer. I bunn og grunn handlet det om å finne skjult orden i kompliserte systemer.</p>
+          <p>Jeg liker å finne strukturer og mønstre, bygge verktøy som gjør dem synlig, og forklare hva dem betyr. Jeg har gjort dette innen ren matematikk; nå vil jeg gjøre det med ekte data og ekte problemer.</p>
+          <p>Utover å utforske teori har jeg bygd interaktive webverktøy og beregningsprogram, undervist i matematikk på universitetsnivå i syv år, og skrevet fire artikler, to eneforfattet.</p>
+        </div>
+      </div>
+      <div class="skill-cards reveal-stagger">
+        <div class="skill-card reveal">
+          <div class="skill-icon">◎</div>
+          <h3 class="skill-title" data-en="Analytical depth" data-no="Analytisk dybde">Analytical depth</h3>
+          <p class="skill-desc" data-en="Comfortable with ambiguity and open-ended problems. Four written papers, two sole-authored." data-no="Komfortabel med tvetydighet og åpne problemer. Fire skrevne artikler, to eneforfattet.">Comfortable with ambiguity and open-ended problems. Four written papers, two sole-authored.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">⚙</div>
+          <h3 class="skill-title" data-en="Tool building" data-no="Verktøybygging">Tool building</h3>
+          <p class="skill-desc" data-en="Python pipelines, interactive JS visualisers, diagram generation." data-no="Python-beregninger, interaktive JS-visualisatorer, diagramgenerering.">Python pipelines, interactive JS visualisers, diagram generation.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">↗</div>
+          <h3 class="skill-title" data-en="Communication" data-no="Kommunikasjon">Communication</h3>
+          <p class="skill-desc" data-en="Seven years teaching mathematics at university level. Not just explaining, but making it land." data-no="Syv år med matematikkundervisning på universitetsnivå. Ikke bare forklare, men å gjøre det forståelig.">Seven years teaching mathematics at university level. Not just explaining, but making it understandable.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">✦</div>
+          <h3 class="skill-title" data-en="Independent work" data-no="Selvstendig arbeid">Independent work</h3>
+          <p class="skill-desc" data-en="Sole-authored papers, open-source projects, self-directed research." data-no="Eneforfattede artikler, åpen kildekode-prosjekter, selvstyrt forskning.">Sole-authored papers, open-source projects, self-directed research.</p>
+        </div>
+      </div>
+    </div>
+    <div class="social-links reveal">
+      <a href="https://www.linkedin.com/in/endrerundsveen" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> endrerundsveen
+      </a>
+      <a href="https://github.com/endresr" target="_blank">
+        <i class="fa-brands fa-github"></i> endresr
+      </a>
+    </div>
+  </div>
+</section>
 
-            // Update active button
-            buttons.forEach(button => button.classList.remove('active'));
-            document.querySelector(`.filter-button[onclick="filterCards('${role}')"]`).classList.add('active');
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <span class="section-label light reveal" data-en="PROJECTS" data-no="PROSJEKTER">PROJECTS</span>
+    <div class="projects-header reveal">
+      <h2>
+        <span data-lang="en">Things I've <em>built</em></span>
+        <span data-lang="no">Ting jeg har <em>bygd</em></span>
+      </h2>
+      <p class="projects-sub" data-lang="en">I build tools: computational, visual, and interactive. These bridge abstract mathematics and legible output.</p>
+      <p class="projects-sub" data-lang="no">Jeg bygger verktøy: beregningsbaserte, visuelle og interaktive. Disse bringer abstrakt matematikk til lesbar output.</p>
+    </div>
 
-            // Show or hide cards based on the selected role
-            cards.forEach(card => {
-                if (role === 'all' || card.getAttribute('data-role') === role) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <div class="project-cards reveal-stagger">
+      <div class="project-card reveal">
+        <div class="project-meta">
+          <span class="project-type" data-en="INTERACTIVE WEB APP" data-no="INTERAKTIV WEBAPP">INTERACTIVE WEB APP</span>
+          <span class="project-tags">JavaScript · Graph Rendering · Research Tool</span>
+        </div>
+        <h3 class="project-title">Interactive \(\tau_d\)-tilting illustration</h3>
+        <p class="project-desc" data-lang="en">An interactive browser-based tool for exploring algebraic structures from my research. Users can select parameters, explore mathematical objects, and see real-time constraint logic. Everything rendered in the browser with no backend. Built as a companion to an arXiv preprint.</p>
+        <p class="project-desc" data-lang="no">Et interaktivt nettleserbasert verktøy for å utforske algebraiske strukturer fra forskningen min. Brukere kan velge parametere, utforske matematiske objekter og se sanntids begrensningslogikk. Alt foregår i nettleseren uten backend. Bygd som et supplement til en arXiv-preprint.</p>
+        <div class="project-links">
+          <a href="./Higher_Tau_Nakayama/" target="_blank" class="btn btn-sm" data-en="Live demo →" data-no="Live demo →">Live demo →</a>
+          <a href="https://arxiv.org/abs/2410.19505" target="_blank" class="project-link-plain">arXiv</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-meta">
+          <span class="project-type" data-en="PYTHON · COMPUTATION · PIPELINE" data-no="PYTHON · BEREGNING">PYTHON · COMPUTATION · PIPELINE</span>
+          <span class="project-tags">Python · LaTeX · CLI · MIT Licensed</span>
+        </div>
+        <h3 class="project-title">Extended modules</h3>
+        <p class="project-desc" data-lang="en">A Python tool that takes algebraic input, computes structural components of module categories, and generates publication-ready AR-quiver diagrams via LaTeX. Modular architecture across Python and LaTeX.</p>
+        <p class="project-desc" data-lang="no">Et Python-verktøy som tar algebraisk inndata, beregner strukturelle komponenter av modulkategorier og genererer publikasjonsklar AR-pil-diagrammer via LaTeX. Modulær arkitektur på tvers av Python og LaTeX.</p>
+        <div class="project-links">
+          <a href="https://github.com/endresr/extendedModules" target="_blank" class="btn btn-sm" data-en="View on GitHub →" data-no="Se på GitHub →">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <span class="section-label reveal" data-en="TOOLS &amp; SKILLS" data-no="VERKTØY OG FERDIGHETER">TOOLS &amp; SKILLS</span>
+    <h2 class="reveal">
+      <span data-lang="en">Things I work <em>with</em></span>
+      <span data-lang="no">Verktøy jeg jobber <em>med</em></span>
+    </h2>
+    <div class="skills-grid reveal-stagger">
+      <div class="skills-group reveal">
+        <h4 class="skills-group-label" data-en="Languages" data-no="Språk">Languages</h4>
+        <div class="skill-pills">
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">LaTeX / TikZ</span>
+          <span class="pill">GAP</span>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <h4 class="skills-group-label" data-en="Libraries &amp; Tools" data-no="Biblioteker og verktøy">Libraries &amp; Tools</h4>
+        <div class="skill-pills">
+          <span class="pill">Matplotlib</span>
+          <span class="pill">Git</span>
+          <span class="pill">MathJax</span>
+          <span class="pill">Cytoscape.js</span>
+          <span class="pill">Claude Code</span>
+          <span class="pill">NetworkX</span>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <h4 class="skills-group-label" data-en="Areas" data-no="Fagområder">Areas</h4>
+        <div class="skill-pills">
+          <span class="pill" data-en="Mathematical modelling" data-no="Matematisk modellering">Mathematical modelling</span>
+          <span class="pill" data-en="Data visualisation" data-no="Datavisualisering">Data visualisation</span>
+          <span class="pill" data-en="Graph theory" data-no="Grafteori">Graph theory</span>
+          <span class="pill" data-en="Algebraic computation" data-no="Algebraisk beregning">Algebraic computation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH / PUBLICATIONS -->
+<section class="research" id="research">
+  <div class="section-inner">
+    <span class="section-label reveal" data-en="RESEARCH" data-no="FORSKNING">RESEARCH</span>
+    <div class="research-header-grid reveal">
+      <div>
+        <h2>
+          <span data-lang="en">Publications</span>
+          <span data-lang="no">Publikasjoner</span>
+        </h2>
+        <div data-lang="en">
+          <p>My research sits at the intersection of representation theory and combinatorics. I study how algebraic objects can be classified, transformed, and generalised.</p>
+          <p>One note on academic honesty: after uploading one of my papers to arXiv, I discovered the main result had been described independently elsewhere. I immediately updated the paper publicly. It matters to me to be open and accurate.</p>
+        </div>
+        <div data-lang="no">
+          <p>Forskningen min befinner seg i skjæringspunktet mellom representasjonsteori og kombinatorikk. Jeg studerer hvordan algebraiske objekter kan klassifiseres, transformeres og generaliseres.</p>
+          <p>En merknad om akademisk ærlighet: etter å ha lastet opp en av artiklene min til arXiv oppdaget jeg at hovedresultatet hadde blitt beskrevet uavhengig annetsteds. Jeg oppdaterte straks artikkelen med denne informasjon. Det er viktig for meg å være åpen og nøyaktig.</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="thesis-label" data-en="PhD Thesis" data-no="Doktorgradsavhandling">PhD Thesis</h3>
+        <div class="thesis-card">
+          <p class="thesis-title">Generalizations of \(\tau\)-tilting: Related structures and higher settings</p>
+          <p class="thesis-meta">NTNU, 2026</p>
+          <div class="thesis-links">
+            <a href="https://hdl.handle.net/11250/5366326" target="_blank" data-en="Digital copy" data-no="Digital kopi">Digital copy</a>
+            <a href="./resources/misc/defence.pdf" target="_blank" data-en="Defence slides" data-no="Forsvarsforedrag">Defence slides</a>
+            <a href="./resources/misc/trialLecture.pdf" target="_blank" data-en="Trial lecture slides" data-no="Prøveforelesning">Trial lecture slides</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-list reveal-stagger">
+      <div class="pub-entry reveal">
+        <div class="pub-year">2025</div>
+        <div class="pub-info">
+          <p class="pub-title">\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</p>
+          <p class="pub-authors">with <a href="https://bervinator.github.io/" target="_blank">Erlend D. Børve</a>, <a href="https://jagr2808.github.io/" target="_blank">Jacob Fjeld Grevstad</a></p>
+          <p class="pub-venue">Journal of Algebra, 2025</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jalgebra.2025.06.048" target="_blank"><i class="ai ai-doi"></i> DOI</a>
+            <a href="https://arxiv.org/abs/2407.17965" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2025</div>
+        <div class="pub-info">
+          <p class="pub-title">A note on the \(m\)-extended module categories of Nakayama algebras</p>
+          <p class="pub-authors" data-en="sole author" data-no="eneforfattet">sole author</p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2025" data-no="Forhåndstrykk, arXiv 2025">Preprint, arXiv 2025</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2601.14843" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/extendedModuleNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2024</div>
+        <div class="pub-info">
+          <p class="pub-title">\(\tau_d\)-tilting theory for Nakayama algebras</p>
+          <p class="pub-authors">with <a href="https://laertisvaso.com/" target="_blank">Laertis Vaso</a></p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2410.19505" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2024</div>
+        <div class="pub-info">
+          <p class="pub-title">Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</p>
+          <p class="pub-authors" data-en="sole author" data-no="eneforfattet">sole author</p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2410.02322" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section class="teaching" id="teaching">
+  <div class="section-inner">
+    <span class="section-label reveal" data-en="TEACHING" data-no="UNDERVISNING">TEACHING</span>
+    <div class="teaching-grid">
+      <div class="teaching-copy reveal">
+        <h2>
+          <span data-lang="en">Seven years in<br><em>the classroom</em></span>
+          <span data-lang="no">Syv år i<br><em>klasserommet</em></span>
+        </h2>
+        <div data-lang="en">
+          <p>Teaching mathematics at NTNU. From first-year students encountering linear algebra for the first time, to calculus and geometry.</p>
+          <p>I've worked as a student assistant, teaching assistant, and independent lecturer. The through-line: making complex things make sense.</p>
+        </div>
+        <div data-lang="no">
+          <p>Undervisning i matematikk ved NTNU. Fra første-års-studenter som møter lineær algebra for første gang, til analyse og geometri.</p>
+          <p>Jeg har jobbet som studentassistent, øvingslærer og selvstendig foreleser. Den røde tråden: å gjøre kompliserte ting forståelige.</p>
+        </div>
+        <div class="teaching-stats">
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label" data-en="years teaching at university level" data-no="år med universitetsundervisning">years teaching at university level</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4×</span>
+            <span class="stat-label" data-en="independent lecturer" data-no="selvstendig foreleser">independent lecturer</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label" data-en="students introduced to linear algebra" data-no="studenter introdusert til lineær algebra">students introduced to linear algebra</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-list reveal-stagger">
+        <div class="course-entry reveal">
+          <span class="course-date">2022–2024</span>
+          <div class="course-info">
+            <strong data-en="Refresher Course — Linear Algebra &amp; ODEs" data-no="Oppfriskelseskurs — Lineær algebra og diff.likninger">Refresher Course — Linear Algebra &amp; ODEs</strong>
+            <span class="course-role" data-en="Lecturer" data-no="Foreleser">Lecturer</span>
+          </div>
+        </div>
+        <div class="course-entry reveal">
+          <span class="course-date" data-en="Autumn 2023" data-no="Høst 2023">Autumn 2023</span>
+          <div class="course-info">
+            <strong>MA1101 — <span data-en="Calculus 1" data-no="Grunnkurs i Analyse 1">Calculus 1</span></strong>
+            <span class="course-role" data-en="Teaching Assistant" data-no="Øvingslærer">Teaching Assistant</span>
+          </div>
+        </div>
+        <div class="course-entry reveal">
+          <span class="course-date" data-en="Autumn 2022" data-no="Høst 2022">Autumn 2022</span>
+          <div class="course-info">
+            <strong>TMA4110 — <span data-en="Mathematics 3" data-no="Matematikk 3">Mathematics 3</span></strong>
+            <span class="course-role" data-en="Lecturer" data-no="Foreleser">Lecturer</span>
+          </div>
+        </div>
+        <div class="course-entry reveal">
+          <span class="course-date">2021–2022</span>
+          <div class="course-info">
+            <strong>TMA4115 — <span data-en="Mathematics 3" data-no="Matematikk 3">Mathematics 3</span></strong>
+            <span class="course-role" data-en="Teaching Assistant" data-no="Øvingslærer">Teaching Assistant</span>
+          </div>
+        </div>
+        <div class="course-entry reveal">
+          <span class="course-date">2017–2020</span>
+          <div class="course-info">
+            <strong>MA1201 / MA2401 — <span data-en="Linear Algebra &amp; Geometry" data-no="Lineær algebra og geometri">Linear Algebra &amp; Geometry</span></strong>
+            <span class="course-role" data-en="Student Assistant" data-no="Studentassistent">Student Assistant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-copy reveal">
+        <h2>
+          <span data-lang="en">Let's talk about<br><em>hard problems</em></span>
+          <span data-lang="no">La oss snakke om<br><em>vanskelige problemer</em></span>
+        </h2>
+        <div data-lang="en">
+          <p>I'm actively exploring opportunities in data, tech consulting, and analytical roles in Norway. I'm especially interested in conversations with people working on problems that involve structural thinking.</p>
+          <p>An informal coffee or call is always a good place to start.</p>
+        </div>
+        <div data-lang="no">
+          <p>Jeg utforsker aktivt muligheter innen data, teknologikonsulentvirksomhet og analytiske roller i Norge. Jeg er spesielt interessert i samtaler med folk som jobber med problemer som involverer strukturell tenkning.</p>
+          <p>En uformell kaffe eller samtale er alltid et godt sted å begynne.</p>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/endrerundsveen" target="_blank" class="contact-link">
+            <i class="fa-brands fa-linkedin"></i> endrerundsveen
+          </a>
+          <a href="https://github.com/endresr" target="_blank" class="contact-link">
+            <i class="fa-brands fa-github"></i> endresr
+          </a>
+        </div>
+      </div>
+      <div class="contact-status reveal reveal-delay">
+        <div class="status-card">
+          <span class="section-label light" data-en="CURRENT STATUS" data-no="NÅVÆRENDE STATUS">CURRENT STATUS</span>
+          <div class="status-indicator-row">
+            <span class="status-dot"></span>
+            <h3 class="status-heading" data-en="Available for new opportunities in 2026" data-no="Tilgjengelig for nye muligheter i 2026">Available for new opportunities in 2026</h3>
+          </div>
+          <p class="status-body" data-en="Based in Oslo area. Open to full-time roles, project work, and exploratory conversations." data-no="Bor i Oslo-området. Åpen for heltidsstillinger, prosjektarbeid og utforskende samtaler.">Based in Oslo area. Open to full-time roles, project work, and exploratory conversations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2026 Endre Rundsveen</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    // Simple text swap for elements with data-en and data-no
+    document.querySelectorAll('[data-en][data-no]').forEach(function(el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val !== null) el.textContent = val;
+    });
+    // Block-level show/hide for complex content
+    document.querySelectorAll('[data-lang]').forEach(function(el) {
+      el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+    });
+    // Update active language button
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang === 'no' ? 'nb' : 'en';
+  }
+
+  function toggleMobileNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+
+  // Initialise language from localStorage or default to English
+  var savedLang = localStorage.getItem('lang') || 'en';
+  setLang(savedLang);
+
+  // Scroll reveal
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
 
 </body>
 </html>

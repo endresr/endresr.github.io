@@ -4,11 +4,11 @@
 <title>CV - Endre Rundsveen</title>
 
 <link rel="stylesheet" href="./css/cv.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="./css/academicons.min.css"/>
-
+<script type="text/javascript" language="javascript" src="./js/erfaring.js"></script> 
+<script type="text/javascript" language="javascript" src="./js/cv.js"></script> 
 
 
 </head>
@@ -18,7 +18,28 @@
     <h1>
         Livserfaring
     </h1>
-    <div class="timeline-container">
-
+    <div class="timeline-legend">
+            <div class="legend-item"><span class="dot job"></span> Arbeidserfaring</div>
+            <div class="legend-item"><span class="dot edu"></span> Utdanning</div>
+            <div class="legend-item"><span class="dot proj"></span> Prosjekt</div>
+        </div>
+    <div id="cv-container" data-display="timeline">
     </div>
+    
+
+    <div id="drawer-overlay" class="overlay" onclick="closeDrawer()"></div>
+
+    <aside id="detail-drawer" class="drawer">
+        <button id="close-drawer" class="close-btn" onclick="closeDrawer()"><i class="fa-solid fa-xmark"></i></button>
+        <div id="drawer-content">
+            <h2 id="detail-title"></h2>
+            <h3 id="detail-subtitle"></h3>
+            <p id="detail-date"></p>
+            <div id="detail-body"></div>
+        </div>
+    </aside>
+
+    <script>
+        renderCV();
+    </script>
 </body>
