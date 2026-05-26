@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap">
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-aside">
-      <img src="./pictures/portrett_kvadrat.jpg" alt="Endre Rundsveen" class="hero-portrait">
+      <img src="./pictures/portrett_kvadrat.jpg" alt="Endre Rundsveen" class="hero-portrait" fetchpriority="high">
       <div class="hero-info-grid">
         <div class="info-row">
           <span class="info-label" data-en="Based in" data-no="Lokasjon">Based in</span>
@@ -60,15 +60,13 @@
       </div>
     </div>
     <div class="hero-text">
-      <p class="hero-eyebrow">MATHEMATICIAN · BUILDER</p>
-      <h1 class="hero-name">Endre<br>Rundsveen</h1>
+      <h1 class="hero-name">Morn.</h1>
+      <p class="hero-identity" data-en="Endre here, nice to meet you!" data-no="Endre her, hyggelig å møte deg!">Endre her, hyggelig å møte deg!</p>
       <div data-lang="en">
-        <p class="hero-tagline">I find <strong>structure in complexity</strong> — whether that's understanding algebraic objects, building computational tools, or making abstract ideas clear to a room full of students.</p>
-        <p class="hero-sub">PhD in Mathematics (NTNU, 2026). Now looking for problems worth solving in industry.</p>
+        <p class="hero-tagline">I'm a mathematician with a PhD, looking for interesting problems in industry.</p>
       </div>
       <div data-lang="no">
-        <p class="hero-tagline">Jeg finner <strong>struktur i kompleksitet</strong> — enten det gjelder å forstå algebraiske objekter, bygge beregningsverktøy, eller gjøre abstrakte ideer tydelige for et rom fullt av studenter.</p>
-        <p class="hero-sub">PhD i matematikk (NTNU, 2026). Søker nå problemer verdt å løse i industrien.</p>
+        <p class="hero-tagline">Jeg er en matematiker med doktorgrad, som søker interessante problemer i industrien.</p>
       </div>
       <div class="hero-ctas">
         <a href="#projects" class="btn btn-primary" data-en="See My Work" data-no="Se hva jeg har bygd">See My Work</a>
@@ -89,36 +87,29 @@
           <span data-lang="no">En matematiker<br><em>i omstilling</em></span>
         </h2>
         <div data-lang="en">
-          <p>I recently completed my PhD at NTNU, where I spent years studying and classifying algebraic structures. In essence, finding hidden order in complicated systems.</p>
           <p>I like finding structures and patterns, building tools to make them visible, and explaining what they mean. I've done this in pure mathematics; I want to do it with real data and real problems.</p>
-          <p>Outside the theory, I've built interactive web tools and computational pipelines, taught university mathematics for seven years, and written four papers, two sole-authored.</p>
+          <p>Outside the theory, I've built interactive web tools, computational pipelines, and diagram generators. I have taught university courses and written four papers, two sole-authored.</p>
         </div>
         <div data-lang="no">
-          <p>Jeg fullførte nylig doktorgraden min ved NTNU, der jeg fordypet meg i å forstå og klassifisere algebraiske strukturer. I bunn og grunn handlet det om å finne skjult orden i kompliserte systemer.</p>
-          <p>Jeg liker å finne strukturer og mønstre, bygge verktøy som gjør dem synlig, og forklare hva dem betyr. Jeg har gjort dette innen ren matematikk; nå vil jeg gjøre det med ekte data og ekte problemer.</p>
-          <p>Utover å utforske teori har jeg bygd interaktive webverktøy og beregningsprogram, undervist i matematikk på universitetsnivå i syv år, og skrevet fire artikler, to eneforfattet.</p>
+          <p>Jeg liker å finne strukturer og mønstre, bygge verktøy som gjør dem synlig, og forklare hva de betyr. Jeg har gjort dette innen ren matematikk; nå vil jeg gjøre det med ekte data og ekte problemer.</p>
+          <p>Utover å utforske teori har jeg bygd interaktive webverktøy og beregningsprogram, vært involvert i koordineringen av et matematikkemne med 500 studenter, og skrevet fire artikler, to eneforfattet.</p>
         </div>
       </div>
       <div class="skill-cards reveal-stagger">
         <div class="skill-card reveal">
-          <div class="skill-icon">◎</div>
-          <h3 class="skill-title" data-en="Analytical depth" data-no="Analytisk dybde">Analytical depth</h3>
-          <p class="skill-desc" data-en="Comfortable with ambiguity and open-ended problems. Four written papers, two sole-authored." data-no="Komfortabel med tvetydighet og åpne problemer. Fire skrevne artikler, to eneforfattet.">Comfortable with ambiguity and open-ended problems. Four written papers, two sole-authored.</p>
+          <div class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3 class="skill-title" data-en="Research" data-no="Forskning">Research</h3>
+          <p class="skill-desc" data-en="Four papers on τ-tilting theory and related algebraic structures, two sole-authored." data-no="Fire artikler om τ-tilting-teori og beslektede algebraiske strukturer, to eneforfattet.">Four papers on τ-tilting theory and related algebraic structures, two sole-authored.</p>
         </div>
         <div class="skill-card reveal">
-          <div class="skill-icon">⚙</div>
-          <h3 class="skill-title" data-en="Tool building" data-no="Verktøybygging">Tool building</h3>
-          <p class="skill-desc" data-en="Python pipelines, interactive JS visualisers, diagram generation." data-no="Python-beregninger, interaktive JS-visualisatorer, diagramgenerering.">Python pipelines, interactive JS visualisers, diagram generation.</p>
+          <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="skill-title" data-en="Stack" data-no="Verktøy">Stack</h3>
+          <p class="skill-desc">Python · JavaScript · LaTeX/TikZ · GAP<br>NetworkX · Cytoscape.js · MathJax · Git</p>
         </div>
         <div class="skill-card reveal">
-          <div class="skill-icon">↗</div>
+          <div class="skill-icon"><i class="fa-solid fa-chalkboard"></i></div>
           <h3 class="skill-title" data-en="Communication" data-no="Kommunikasjon">Communication</h3>
-          <p class="skill-desc" data-en="Seven years teaching mathematics at university level. Not just explaining, but making it land." data-no="Syv år med matematikkundervisning på universitetsnivå. Ikke bare forklare, men å gjøre det forståelig.">Seven years teaching mathematics at university level. Not just explaining, but making it understandable.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">✦</div>
-          <h3 class="skill-title" data-en="Independent work" data-no="Selvstendig arbeid">Independent work</h3>
-          <p class="skill-desc" data-en="Sole-authored papers, open-source projects, self-directed research." data-no="Eneforfattede artikler, åpen kildekode-prosjekter, selvstyrt forskning.">Sole-authored papers, open-source projects, self-directed research.</p>
+          <p class="skill-desc" data-en="Seven years and 1 000+ students. Four independent lecture series. " data-no="Syv år og over tusen studenter. Fire selvstendige forelesningsrekker.">Seven years and 1 000+ students. Four independent lecture series.</p>
         </div>
       </div>
     </div>
@@ -139,18 +130,21 @@
     <span class="section-label light reveal" data-en="PROJECTS" data-no="PROSJEKTER">PROJECTS</span>
     <div class="projects-header reveal">
       <h2>
-        <span data-lang="en">Things I've <em>built</em></span>
-        <span data-lang="no">Ting jeg har <em>bygd</em></span>
+        <span data-lang="en">Things I've <em>made</em></span>
+        <span data-lang="no">Ting jeg har <em>laget</em></span>
       </h2>
-      <p class="projects-sub" data-lang="en">I build tools: computational, visual, and interactive. These bridge abstract mathematics and legible output.</p>
-      <p class="projects-sub" data-lang="no">Jeg bygger verktøy: beregningsbaserte, visuelle og interaktive. Disse bringer abstrakt matematikk til lesbar output.</p>
+      <p class="projects-sub" data-lang="en">Some tools I've made for work, and fun sideprojects. Tools made to help explore and illustrate.</p>
+      <p class="projects-sub" data-lang="no">Noen verktøy jeg har lagd for jobb, og morsomme sideprosjekt. Verktøy for å hjelpe på utforskning og for å illustrere.</p>
     </div>
 
     <div class="project-cards reveal-stagger">
       <div class="project-card reveal">
+        <div class="project-preview">
+          <canvas id="canvas-tilting" role="img" aria-label="Animated diagram cycling through nine frames of τ_d-tilting theory on a Nakayama algebra, showing coloured nodes and cross markers"></canvas>
+        </div>
         <div class="project-meta">
           <span class="project-type" data-en="INTERACTIVE WEB APP" data-no="INTERAKTIV WEBAPP">INTERACTIVE WEB APP</span>
-          <span class="project-tags">JavaScript · Graph Rendering · Research Tool</span>
+          <span class="project-tags" data-en="JavaScript · Graph Rendering · Research Tool" data-no="JavaScript · Grafvisulisering · Forskningsverktøy">JavaScript · Graph Rendering · Research Tool</span>
         </div>
         <h3 class="project-title">Interactive \(\tau_d\)-tilting illustration</h3>
         <p class="project-desc" data-lang="en">An interactive browser-based tool for exploring algebraic structures from my research. Users can select parameters, explore mathematical objects, and see real-time constraint logic. Everything rendered in the browser with no backend. Built as a companion to an arXiv preprint.</p>
@@ -161,145 +155,68 @@
         </div>
       </div>
       <div class="project-card reveal">
+        <div class="project-preview">
+          <canvas id="canvas-knitting" role="img" aria-label="Animated AR-quiver diagram building left to right, column by column, showing nodes and arrows of a representation-theoretic quiver"></canvas>
+        </div>
         <div class="project-meta">
           <span class="project-type" data-en="PYTHON · COMPUTATION · PIPELINE" data-no="PYTHON · BEREGNING">PYTHON · COMPUTATION · PIPELINE</span>
           <span class="project-tags">Python · LaTeX · CLI · MIT Licensed</span>
         </div>
         <h3 class="project-title">Extended modules</h3>
         <p class="project-desc" data-lang="en">A Python tool that takes algebraic input, computes structural components of module categories, and generates publication-ready AR-quiver diagrams via LaTeX. Modular architecture across Python and LaTeX.</p>
-        <p class="project-desc" data-lang="no">Et Python-verktøy som tar algebraisk inndata, beregner strukturelle komponenter av modulkategorier og genererer publikasjonsklar AR-pil-diagrammer via LaTeX. Modulær arkitektur på tvers av Python og LaTeX.</p>
+        <p class="project-desc" data-lang="no">Et Python-verktøy som tar algebraisk inndata, beregner strukturelle komponenter av modulkategorier og genererer publikasjonsklar AR-kogger-diagrammer via LaTeX. Modulær arkitektur på tvers av Python og LaTeX.</p>
         <div class="project-links">
           <a href="https://github.com/endresr/extendedModules" target="_blank" class="btn btn-sm" data-en="View on GitHub →" data-no="Se på GitHub →">View on GitHub →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <div class="section-inner">
-    <span class="section-label reveal" data-en="TOOLS &amp; SKILLS" data-no="VERKTØY OG FERDIGHETER">TOOLS &amp; SKILLS</span>
-    <h2 class="reveal">
-      <span data-lang="en">Things I work <em>with</em></span>
-      <span data-lang="no">Verktøy jeg jobber <em>med</em></span>
-    </h2>
-    <div class="skills-grid reveal-stagger">
-      <div class="skills-group reveal">
-        <h4 class="skills-group-label" data-en="Languages" data-no="Språk">Languages</h4>
-        <div class="skill-pills">
-          <span class="pill">Python</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">LaTeX / TikZ</span>
-          <span class="pill">GAP</span>
+      <div class="project-card reveal">
+        <div class="project-preview">
+          <canvas id="canvas-ordstige" role="img" aria-label="Animation of the Ordstige puzzle being solved: letters typing into a 3-row grid, then cells turning green as the solution SOL is revealed"></canvas>
         </div>
-      </div>
-      <div class="skills-group reveal">
-        <h4 class="skills-group-label" data-en="Libraries &amp; Tools" data-no="Biblioteker og verktøy">Libraries &amp; Tools</h4>
-        <div class="skill-pills">
-          <span class="pill">Matplotlib</span>
-          <span class="pill">Git</span>
-          <span class="pill">MathJax</span>
-          <span class="pill">Cytoscape.js</span>
-          <span class="pill">Claude Code</span>
-          <span class="pill">NetworkX</span>
+        <div class="project-meta">
+          <span class="project-type" data-en="INTERACTIVE WEB APP · SIDE PROJECT" data-no="INTERAKTIV WEBAPP · SIDEPROSJEKT">INTERACTIVE WEB APP · SIDE PROJECT</span>
+          <span class="project-tags" data-en="JavaScript · No dependencies · Built with Claude Code" data-no="JavaScript · Ingen avhengigheter · Laget med Claude Code">JavaScript · No dependencies · Built with Claude Code</span>
         </div>
-      </div>
-      <div class="skills-group reveal">
-        <h4 class="skills-group-label" data-en="Areas" data-no="Fagområder">Areas</h4>
-        <div class="skill-pills">
-          <span class="pill" data-en="Mathematical modelling" data-no="Matematisk modellering">Mathematical modelling</span>
-          <span class="pill" data-en="Data visualisation" data-no="Datavisualisering">Data visualisation</span>
-          <span class="pill" data-en="Graph theory" data-no="Grafteori">Graph theory</span>
-          <span class="pill" data-en="Algebraic computation" data-no="Algebraisk beregning">Algebraic computation</span>
+        <h3 class="project-title">Ordstige</h3>
+        <p class="project-desc" data-lang="en">A small Norwegian-language puzzle I made on the side, in part to share with friends and in part to gain experience with AI coding tools. An acrostic puzzle inspired by "Påske-"/"Julenøtter" at NRK, that lives entirely in the URL: no backend, no database, no login. Built with Claude Code, with me steering the design choices and reviewing the code.</p>
+        <p class="project-desc" data-lang="no">Et lite ordspill jeg lagde på siden, delvis for å dele med venner og delvis for å bygge erfaring med KI-baserte kodeverktøy. Et akrostiskt ordspill inspirert av påske-/julenøttene på NRK, som lever i selve URL-en: ingen backend, ingen database, ingen innlogging. Bygd med Claude Code, hvor jeg styrte designvalg og leste gjennom koden.</p>
+        <div class="project-links">
+          <a href="./Ordstige/" target="_blank" class="btn btn-sm" data-en="Live demo →" data-no="Live demo →">Live demo →</a>
+          <a href="https://github.com/endresr/Ordstige" target="_blank" class="btn btn-sm" data-en="View on GitHub →" data-no="Se på GitHub →">View on GitHub →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH / PUBLICATIONS -->
-<section class="research" id="research">
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
   <div class="section-inner">
-    <span class="section-label reveal" data-en="RESEARCH" data-no="FORSKNING">RESEARCH</span>
-    <div class="research-header-grid reveal">
-      <div>
-        <h2>
-          <span data-lang="en">Publications</span>
-          <span data-lang="no">Publikasjoner</span>
-        </h2>
-        <div data-lang="en">
-          <p>My research sits at the intersection of representation theory and combinatorics. I study how algebraic objects can be classified, transformed, and generalised.</p>
-          <p>One note on academic honesty: after uploading one of my papers to arXiv, I discovered the main result had been described independently elsewhere. I immediately updated the paper publicly. It matters to me to be open and accurate.</p>
+    <span class="section-label reveal" data-en="EXPERIENCE" data-no="ERFARING">EXPERIENCE</span>
+    <h1 class="reveal">
+      <span data-lang="en">Beyond the <em>whiteboard</em></span>
+      <span data-lang="no">Utenfor <em>tavlen</em></span>
+    </h1>
+    <div class="exp-list reveal-stagger">
+      <div class="exp-entry reveal">
+        <div class="exp-header">
+          <span class="exp-role" data-en="Freelance content producer" data-no="Frilansprodusent">Frilansprodusent</span>
+          <span class="exp-date">2019–2020</span>
         </div>
-        <div data-lang="no">
-          <p>Forskningen min befinner seg i skjæringspunktet mellom representasjonsteori og kombinatorikk. Jeg studerer hvordan algebraiske objekter kan klassifiseres, transformeres og generaliseres.</p>
-          <p>En merknad om akademisk ærlighet: etter å ha lastet opp en av artiklene min til arXiv oppdaget jeg at hovedresultatet hadde blitt beskrevet uavhengig annetsteds. Jeg oppdaterte straks artikkelen med denne informasjon. Det er viktig for meg å være åpen og nøyaktig.</p>
-        </div>
+        <span class="exp-company">Cappelen Damm</span>
+        <div data-lang="en"><p>Produced digital mathematics content for grades 3–10 on contract for Cappelen Damm.</p></div>
+        <div data-lang="no"><p>Produserte digitalt matematikkinnhold for trinn 3–10 på oppdrag fra Cappelen Damm.</p></div>
+        <p class="exp-tags" data-en="Publishing · Educational content · Mathematics" data-no="Forlagsarbeid · Utdanningsinnhold · Matematikk">Forlagsarbeid · Utdanningsinnhold · Matematikk</p>
       </div>
-      <div>
-        <h3 class="thesis-label" data-en="PhD Thesis" data-no="Doktorgradsavhandling">PhD Thesis</h3>
-        <div class="thesis-card">
-          <p class="thesis-title">Generalizations of \(\tau\)-tilting: Related structures and higher settings</p>
-          <p class="thesis-meta">NTNU, 2026</p>
-          <div class="thesis-links">
-            <a href="https://hdl.handle.net/11250/5366326" target="_blank" data-en="Digital copy" data-no="Digital kopi">Digital copy</a>
-            <a href="./resources/misc/defence.pdf" target="_blank" data-en="Defence slides" data-no="Forsvarsforedrag">Defence slides</a>
-            <a href="./resources/misc/trialLecture.pdf" target="_blank" data-en="Trial lecture slides" data-no="Prøveforelesning">Trial lecture slides</a>
-          </div>
+      <div class="exp-entry reveal">
+        <div class="exp-header">
+          <span class="exp-role" data-en="Department manager" data-no="Avdelingsleder">Avdelingsleder</span>
+          <span class="exp-date">2012–2021</span>
         </div>
-      </div>
-    </div>
-
-    <div class="pub-list reveal-stagger">
-      <div class="pub-entry reveal">
-        <div class="pub-year">2025</div>
-        <div class="pub-info">
-          <p class="pub-title">\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</p>
-          <p class="pub-authors">with <a href="https://bervinator.github.io/" target="_blank">Erlend D. Børve</a>, <a href="https://jagr2808.github.io/" target="_blank">Jacob Fjeld Grevstad</a></p>
-          <p class="pub-venue">Journal of Algebra, 2025</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.jalgebra.2025.06.048" target="_blank"><i class="ai ai-doi"></i> DOI</a>
-            <a href="https://arxiv.org/abs/2407.17965" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
-            <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="pub-entry reveal">
-        <div class="pub-year">2025</div>
-        <div class="pub-info">
-          <p class="pub-title">A note on the \(m\)-extended module categories of Nakayama algebras</p>
-          <p class="pub-authors" data-en="sole author" data-no="eneforfattet">sole author</p>
-          <p class="pub-venue" data-en="Preprint, arXiv 2025" data-no="Forhåndstrykk, arXiv 2025">Preprint, arXiv 2025</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2601.14843" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
-            <a href="./resources/bib-files/extendedModuleNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="pub-entry reveal">
-        <div class="pub-year">2024</div>
-        <div class="pub-info">
-          <p class="pub-title">\(\tau_d\)-tilting theory for Nakayama algebras</p>
-          <p class="pub-authors">with <a href="https://laertisvaso.com/" target="_blank">Laertis Vaso</a></p>
-          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2410.19505" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
-            <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="pub-entry reveal">
-        <div class="pub-year">2024</div>
-        <div class="pub-info">
-          <p class="pub-title">Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</p>
-          <p class="pub-authors" data-en="sole author" data-no="eneforfattet">sole author</p>
-          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2410.02322" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
-            <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
-          </div>
-        </div>
+        <span class="exp-company">Hunderfossen Familiepark</span>
+        <div data-lang="en"><p>Worked summers at Hunderfossen for almost a decade. Started at a kiosk and worked my way up to a manager position of attractions.</p></div>
+        <div data-lang="no"><p>Jobbet somre på Hunderfossen i nesten ti år. Startet i kiosk og jobbet meg opp til å bli avdelingsleder for attraksjoner.</p></div>
+        <p class="exp-tags" data-en="Operations · Team management · Customer-support" data-no="Drift · Teamledelse · Kundeservice">Drift · Teamledelse · Kundeservice</p>
       </div>
     </div>
   </div>
@@ -312,16 +229,20 @@
     <div class="teaching-grid">
       <div class="teaching-copy reveal">
         <h2>
-          <span data-lang="en">Seven years in<br><em>the classroom</em></span>
-          <span data-lang="no">Syv år i<br><em>klasserommet</em></span>
+          <span data-lang="en">In the<br><em>classroom</em></span>
+          <span data-lang="no">I<br><em>klasserommet</em></span>
         </h2>
         <div data-lang="en">
-          <p>Teaching mathematics at NTNU. From first-year students encountering linear algebra for the first time, to calculus and geometry.</p>
-          <p>I've worked as a student assistant, teaching assistant, and independent lecturer. The through-line: making complex things make sense.</p>
+          <p>
+            I have had a passion for introducing people to the beauty of mathematics for a long time. From helping fellow students to actual teaching.
+          </p>
+          <p>As a student assistant, teaching assistand and independent lecturer, I have taught Linear Algebra, Calculus and Geometry at NTNU.</p>
         </div>
         <div data-lang="no">
-          <p>Undervisning i matematikk ved NTNU. Fra første-års-studenter som møter lineær algebra for første gang, til analyse og geometri.</p>
-          <p>Jeg har jobbet som studentassistent, øvingslærer og selvstendig foreleser. Den røde tråden: å gjøre kompliserte ting forståelige.</p>
+          <p>
+            Jeg har lenge engasjert meg i å få andre til å se og forstå hvor vakkert matematikk er. Fra å formidle egen forskning, hjelpe medelever/-studenter til å undervise.
+          </p>
+          <p>Jeg har som studentassistent, øvingslærer og selvstendig foreleser undervist lineær algebra, analyse og geometri ved NTNU. </p>
         </div>
         <div class="teaching-stats">
           <div class="stat">
@@ -333,24 +254,25 @@
             <span class="stat-label" data-en="independent lecturer" data-no="selvstendig foreleser">independent lecturer</span>
           </div>
           <div class="stat">
-            <span class="stat-number">∞</span>
+            <span class="stat-number">>1000</span>
             <span class="stat-label" data-en="students introduced to linear algebra" data-no="studenter introdusert til lineær algebra">students introduced to linear algebra</span>
           </div>
         </div>
+
       </div>
       <div class="course-list reveal-stagger">
+        <div class="course-entry reveal">
+          <span class="course-date" data-en="Autumn 2023" data-no="Høst 2023">Autumn 2023</span>
+          <div class="course-info">
+            <strong>MA1101 — <span data-en="Lektor curriculum pilot" data-no="Lektorpilot">Lektor curriculum pilot</span></strong>
+            <span class="course-role" data-en="Led a trial of student presentations to increase professional relevance for teacher-education students." data-no="Ledet et forsøk med studentpresentasjoner for å øke profesjonsrelevansen for lektorstudenter.">Led a trial of student presentations to increase professional relevance for teacher-education students.</span>
+          </div>
+        </div>
         <div class="course-entry reveal">
           <span class="course-date">2022–2024</span>
           <div class="course-info">
             <strong data-en="Refresher Course — Linear Algebra &amp; ODEs" data-no="Oppfriskelseskurs — Lineær algebra og diff.likninger">Refresher Course — Linear Algebra &amp; ODEs</strong>
             <span class="course-role" data-en="Lecturer" data-no="Foreleser">Lecturer</span>
-          </div>
-        </div>
-        <div class="course-entry reveal">
-          <span class="course-date" data-en="Autumn 2023" data-no="Høst 2023">Autumn 2023</span>
-          <div class="course-info">
-            <strong>MA1101 — <span data-en="Calculus 1" data-no="Grunnkurs i Analyse 1">Calculus 1</span></strong>
-            <span class="course-role" data-en="Teaching Assistant" data-no="Øvingslærer">Teaching Assistant</span>
           </div>
         </div>
         <div class="course-entry reveal">
@@ -379,21 +301,109 @@
   </div>
 </section>
 
+<!-- RESEARCH / PUBLICATIONS -->
+<section class="research" id="research">
+  <div class="section-inner">
+    <span class="section-label reveal" data-en="RESEARCH" data-no="FORSKNING">RESEARCH</span>
+    <div class="research-header-grid reveal">
+      <div>
+        <h2>
+          <span data-lang="en">Publications</span>
+          <span data-lang="no">Publikasjoner</span>
+        </h2>
+        <div data-lang="en">
+          <p>My research sits at the intersection of representation theory and combinatorics. I study how algebraic objects can be classified, transformed, and generalised.</p>
+        </div>
+        <div data-lang="no">
+          <p>Forskningen min befinner seg i skjæringspunktet mellom representasjonsteori og kombinatorikk. Jeg studerer hvordan algebraiske objekter kan klassifiseres, forandres og generaliseres.</p>
+        </div>
+
+      </div>
+      <div>
+        <h3 class="thesis-label" data-en="PhD Thesis" data-no="Doktorgradsavhandling">PhD Thesis</h3>
+        <div class="thesis-card">
+          <p class="thesis-title">Generalizations of \(\tau\)-tilting: Related structures and higher settings</p>
+          <p class="thesis-meta">NTNU, 2026</p>
+          <div class="thesis-links">
+            <a href="https://hdl.handle.net/11250/5366326" target="_blank" data-en="Digital copy" data-no="Digital kopi">Digital copy</a>
+            <a href="./resources/misc/defence.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> <span data-en="Defence slides" data-no="Forsvarsforedrag">Defence slides</span></a>
+            <a href="./resources/misc/trialLecture.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> <span data-en="Trial lecture slides" data-no="Prøveforelesning">Trial lecture slides</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-list reveal-stagger">
+      <div class="pub-entry reveal">
+        <div class="pub-year">2025</div>
+        <div class="pub-info">
+          <p class="pub-title">\(\tau\)-tilting finiteness and \(\mathbf{g}\)-tameness: Incidence algebras of posets and concealed algebras</p>
+          <p class="pub-authors"><span data-en="With" data-no="Med">With</span> <a href="https://bervinator.github.io/" target="_blank">Erlend D. Børve</a>, <a href="https://jagr2808.github.io/" target="_blank">Jacob Fjeld Grevstad</a></p>
+          <p class="pub-venue">Journal of Algebra, 2025</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.jalgebra.2025.06.048" target="_blank"><i class="ai ai-doi"></i> DOI</a>
+            <a href="https://arxiv.org/abs/2407.17965" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/gtame.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2025</div>
+        <div class="pub-info">
+          <p class="pub-title">A note on the \(m\)-extended module categories of Nakayama algebras</p>
+          <p class="pub-authors" data-en="Sole author" data-no="Eneforfattet">Sole author</p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2025" data-no="Forhåndstrykk, arXiv 2025">Preprint, arXiv 2025</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2601.14843" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/extendedModuleNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2024</div>
+        <div class="pub-info">
+          <p class="pub-title">\(\tau_d\)-tilting theory for Nakayama algebras</p>
+          <p class="pub-authors"><span data-en="With" data-no="Med">With</span> <a href="https://laertisvaso.com/" target="_blank">Laertis Vaso</a></p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2410.19505" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/taudNakayama.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry reveal">
+        <div class="pub-year">2024</div>
+        <div class="pub-info">
+          <p class="pub-title">Universal Extensions and Ext-Orthogonal Complements of Torsion Classes</p>
+          <p class="pub-authors" data-en="Sole author" data-no="Eneforfattet">Sole author</p>
+          <p class="pub-venue" data-en="Preprint, arXiv 2024" data-no="Forhåndstrykk, arXiv 2024">Preprint, arXiv 2024</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2410.02322" target="_blank"><i class="ai ai-arxiv" style="color:#b31b1b;"></i> arXiv</a>
+            <a href="./resources/bib-files/universalExtensions.bib" target="_blank"><i class="fa fa-copy"></i> <span data-en="Cite" data-no="Siter">Cite</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-inner">
     <div class="contact-grid">
       <div class="contact-copy reveal">
         <h2>
-          <span data-lang="en">Let's talk about<br><em>hard problems</em></span>
-          <span data-lang="no">La oss snakke om<br><em>vanskelige problemer</em></span>
+          <span data-lang="en">Let's talk</span>
+          <span data-lang="no">La oss ta en prat</span>
         </h2>
         <div data-lang="en">
-          <p>I'm actively exploring opportunities in data, tech consulting, and analytical roles in Norway. I'm especially interested in conversations with people working on problems that involve structural thinking.</p>
+          <p>I'm actively exploring opportunities in data, tech consulting, and analytical roles in Norway. </p>
           <p>An informal coffee or call is always a good place to start.</p>
         </div>
         <div data-lang="no">
-          <p>Jeg utforsker aktivt muligheter innen data, teknologikonsulentvirksomhet og analytiske roller i Norge. Jeg er spesielt interessert i samtaler med folk som jobber med problemer som involverer strukturell tenkning.</p>
+          <p>Jeg utforsker aktivt muligheter innen data, teknologirådgivning og analytiske roller i Norge.</p>
           <p>En uformell kaffe eller samtale er alltid et godt sted å begynne.</p>
         </div>
         <div class="contact-links">
@@ -402,6 +412,13 @@
           </a>
           <a href="https://github.com/endresr" target="_blank" class="contact-link">
             <i class="fa-brands fa-github"></i> endresr
+          </a>
+          <a class="contact-link"
+             data-user="rundsveen"
+             data-domain="outlook.com"
+             style="cursor:pointer"
+             onclick="var a=this.dataset.user+'@'+this.dataset.domain;this.href='mailto:'+a;this.querySelector('span').textContent=a;this.removeAttribute('onclick');event.preventDefault();">
+            <i class="fa fa-envelope"></i> <span data-en="Send email" data-no="Send e-post">Send e-post</span>
           </a>
         </div>
       </div>
@@ -424,54 +441,9 @@
   <p>© 2026 Endre Rundsveen</p>
 </footer>
 
-<script>
-  function setLang(lang) {
-    // Simple text swap for elements with data-en and data-no
-    document.querySelectorAll('[data-en][data-no]').forEach(function(el) {
-      var val = el.getAttribute('data-' + lang);
-      if (val !== null) el.textContent = val;
-    });
-    // Block-level show/hide for complex content
-    document.querySelectorAll('[data-lang]').forEach(function(el) {
-      el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-    });
-    // Update active language button
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-    });
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang === 'no' ? 'nb' : 'en';
-  }
-
-  function toggleMobileNav() {
-    document.getElementById('nav-links').classList.toggle('open');
-  }
-
-  // Close mobile nav when a link is clicked
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      document.getElementById('nav-links').classList.remove('open');
-    });
-  });
-
-  // Initialise language from localStorage or default to English
-  var savedLang = localStorage.getItem('lang') || 'en';
-  setLang(savedLang);
-
-  // Scroll reveal
-  var revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(function(el) {
-    revealObserver.observe(el);
-  });
-</script>
-
+<script src="./js/main.js"></script>
+<script src="./js/tilting.js"></script>
+<script src="./js/knitting.js"></script>
+<script src="./js/ordstige.js"></script>
 </body>
 </html>
